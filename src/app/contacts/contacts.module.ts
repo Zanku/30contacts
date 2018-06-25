@@ -8,6 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { ContactsService } from './contacts.service';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
@@ -26,7 +27,7 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule
+    MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule
   ],
   providers: [ContactsService],
   exports: [RouterModule],

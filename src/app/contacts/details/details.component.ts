@@ -4,20 +4,15 @@ import { Contact } from '../models/Contact';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap, startWith } from 'rxjs/internal/operators'
 import { ContactsService } from '../contacts.service';
+import { AddComponent } from '../add/add.component';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent extends AddComponent implements OnInit {
   contact$: Observable<Contact>
-
-  constructor(
-    private contactsService: ContactsService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) { }
 
   ngOnInit() {
     this.updateContactStream()
@@ -33,20 +28,4 @@ export class DetailsComponent implements OnInit {
       startWith(new Contact)
     )
   }
-
-  goToList(){
-    this.router.navigate(['../'],{ relativeTo: this.route});
-  }
-
-  onFormCancel(){
-    this.goToList();
-  }
-
-  onFormSave(contact: Contact){
-    this.contactsService.save(contact)
-      .subscribe(() => {
-        this.goToList();
-      })
-  }
-
 }
