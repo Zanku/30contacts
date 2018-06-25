@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactsComponent } from './contacts/contacts.component';
 import { Route, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'
 import { ListComponent } from './list/list.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { ContactsService } from './contacts.service';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
@@ -21,7 +25,8 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatTableModule
+    FormsModule,
+    MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule
   ],
   providers: [ContactsService],
   exports: [RouterModule],

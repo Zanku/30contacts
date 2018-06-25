@@ -1,2 +1,6 @@
 <h3>Contacts Details</h3>
-<app-contacts-form></app-contacts-form>
+<app-contacts-form 
+    [contact] = "contact$ | async"
+    (cancel) = "onFormCancel()"
+    (save) = "onFormSave($event)"
+></app-contacts-form>

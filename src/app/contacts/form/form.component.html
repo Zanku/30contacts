@@ -1,3 +1,33 @@
-<p>
-  form works!
-</p>
+<form #form="ngForm" (submit)="onFormSubmit($event, form)">
+  <mat-form-field>
+    <input matInput name="name" placeholder="Name" 
+      minlength="2"
+      [(ngModel)]="contact.name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="surname" placeholder="Surname" 
+      minlength="4"
+      [(ngModel)]="contact.surname" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" matInput name="age" placeholder="Age" 
+    min="1"  
+    [(ngModel)]="contact.age">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="email" matInput name="email" placeholder="Email" 
+      [(ngModel)]="contact.email" email>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="phone" placeholder="Phone"
+      [(ngModel)]="contact.phone">
+  </mat-form-field>
+  <div class="button-row">
+    <button type="button" mat-raised-button (click)="onCancelClick($event)">Cancel</button>
+    <button type="submit" mat-raised-button [disabled]="form.invalid" color="primary">Save</button>
+  </div>
+</form>
