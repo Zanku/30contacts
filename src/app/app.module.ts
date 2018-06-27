@@ -7,6 +7,13 @@ import { ContactsModule } from './contacts/contacts.module';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './navigation/navigation.component';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card'
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'contacts', pathMatch: 'full'},
@@ -17,13 +24,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule, MatButtonModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
