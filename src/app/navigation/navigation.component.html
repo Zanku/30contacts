@@ -5,7 +5,7 @@
 
 <mat-card class="example-card">
     <mat-menu #details="matMenu">
-        <button mat-menu-item   routerLink = "/main" routerLinkActive = "active">Main</button>
+        <button mat-menu-item   routerLink = "/main"         routerLinkActive = "active">Main</button>
         <button mat-menu-item [matMenuTriggerFor]="ContactsAdd" [routerLinkActiveOptions] = "{exact: true}"
                                 routerLink = "/contacts"     routerLinkActive = "active">Contacts</button>
     </mat-menu>
